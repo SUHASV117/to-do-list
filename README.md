@@ -18,4 +18,4 @@ The app webpage contains the following features:
 Also,after the admin enters all the details regarding an employee, he **can send 
 an email alert to the concerned employee** intimating him about the task assigned to him and also the set deadline.
 
-All these tasks assigned and the data which has been entered by admin, will be stored in a backend database of the department using Mongodb.
+All these tasks assigned data entered by admin, will be stored in a backend database of the department using Mongodb.
