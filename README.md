@@ -10,12 +10,13 @@ The app webpage contains the following features:
 ## Features:
 1. Name of the employee
 2. Email-id of the employee
-3. Task name assigned to the employee
-4. Target (in days) set for the completion of the task
+3. Mobile no. of the employee
+4. Task name assigned to the employee
+5. Target (in days) set for the completion of the task
 
 
 
 Also,after the admin enters all the details regarding an employee, he **can send 
-an email alert to the concerned employee** intimating him about the task assigned to him and also the set deadline.
+an email alert and also sms alert to the concerned employee** intimating him about the task assigned to him and also the set deadline.
 
 All these tasks assigned data entered by admin, will be stored in a backend database of the department using Mongodb.
