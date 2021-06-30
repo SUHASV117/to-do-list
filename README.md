@@ -20,6 +20,9 @@ an email alert and also sms alert to the concerned employee** intimating him abo
 All these tasks assigned data entered by admin, will be stored in a backend database of the department using Mongodb
 
 
+
+## Steps to Run the application:
+
 ### "npm install" in the root directory
 ### cd frontend "npm install"
 ### cd backend "npm install"
