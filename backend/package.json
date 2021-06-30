@@ -2,7 +2,7 @@
   "name": "mern-todo-app-server",
   "version": "1.0.0",
   "description": "The server for my MERN app",
-  "author": "Nicholas Carrigan",
+  "author": "Suhas.V.",
   "main": "app.js",
   "scripts": {
     "build": "tsc",
