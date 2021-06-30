@@ -1,34 +1,26 @@
-import { Application, Request, Response, NextFunction } from 'express';
-import cors from 'cors'
-import mongoose from 'mongoose';
-import express,{Express} from 'express'
-import todoRoute from './route/todoRoute'
+import express, { Express } from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import todoRoutes from "./routes";
+import * as dotenv from "dotenv";
 
-const app:Express = express();
-const PORT: number = 4000
 
-app.use(cors())
-app.use(todoRoute)
+dotenv.config();
+const app: Express = express();
+const PORT: number = 4000;
 
-const uri: string = `mongodb+srv://v2473516799s:v2473516799s@suhasv.5mybd.mongodb.net/Typescript?retryWrites=true&w=majority`
-const options = { useNewUrlParser: true, useUnifiedTopology: true }
-mongoose.set("useFindAndModify", false)
+app.use(cors());
+app.use(todoRoutes);
+
+const uri: string = "mongodb+srv://v2473516799s:v2473516799s@suhasv.5mybd.mongodb.net/Typescript?retryWrites=true&w=majority"
+const options = { useNewUrlParser: true, useUnifiedTopology: true };
+mongoose.set("useFindAndModify", false);
 
 mongoose
   .connect(uri, options)
   .then(() =>
     app.listen(PORT, () =>
-      console.log(`Server running on ${PORT} and Mongodb connected`)
+      console.log(`Server running on http://localhost:${PORT}`)
     )
   )
-  .catch(error => {
-    throw error
-  })
-
-
-/*  
-app.get('/',(req:Request,res:Response, next:NextFunction) => {
-    res.send('Hello');
-});
-
-*/
+  .catch((error) => console.log(error));
