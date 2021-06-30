@@ -24,6 +24,6 @@ All these tasks assigned data entered by admin, will be stored in a backend data
 ## Steps to Run the application:
 
 ### "npm install" in the root directory
-### cd frontend "npm install"
-### cd backend "npm install"
+### "cd frontend" "npm install"
+### "cd backend" "npm install"
 ### "npm start" in the root directory
