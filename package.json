@@ -1,8 +1,8 @@
 {
   "name": "mern-todo-app",
   "version": "1.0.0",
-  "description": "A MERN powered TODO App",
-  "author": "Nicholas Carrigan",
+  "description": "A MERN typescript TODO App",
+  "author": "Suhas.V.",
   "license": "AGPL-3.0-or-later",
   "dependencies": {
     "@types/axios": "^0.14.0",
