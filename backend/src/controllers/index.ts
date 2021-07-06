@@ -32,8 +32,8 @@ const addTodo = async (req: Request, res: Response): Promise<void> => {
     const accountSid = process.env.TWILIO_ACCOUNT_SID;
     const authToken = process.env.TWILIO_AUTH_TOKEN;
     const twilioNumber = process.env.TWILIO_PHONE_NUMBER;
-    const myNumber = process.env.MY_NUMBER;
-   // const myNumber = req.body.mobile;
+   // const myNumber = process.env.MY_NUMBER;
+    const myNumber = req.body.mobile;
     
     if (accountSid && authToken && myNumber && twilioNumber) {
       const client = new Twilio(accountSid, authToken);
@@ -42,7 +42,7 @@ const addTodo = async (req: Request, res: Response): Promise<void> => {
         .create({
           from: twilioNumber,
           to: myNumber,
-          body: "You just sent an SMS from TypeScript using Twilio!",
+          body: "You have been alloted the task"
         })
         .then((message) => console.log(message.sid));
     } else {
