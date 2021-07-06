@@ -34,7 +34,7 @@ const AddTodo: React.FC<Props> = ({ saveTodo }) => {
           <input onChange={handleForm} type='text' id='mobile' />
         </div>
       </div>
-      <button disabled={formData === undefined ? true: false} >Add Todo</button>
+      <button disabled={formData === undefined ? true: false}>Add Todo</button>
     </form>
   )
 }

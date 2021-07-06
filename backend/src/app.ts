@@ -1,8 +1,10 @@
-import express, { Express } from "express";
+import express, { Application, Express } from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import todoRoutes from "./routes";
 import * as dotenv from "dotenv";
+import bodyParser from "body-parser";
+
 
 
 dotenv.config();

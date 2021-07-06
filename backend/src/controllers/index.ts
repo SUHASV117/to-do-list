@@ -1,7 +1,8 @@
 import { Response, Request } from "express";
 import { ITodo } from "../types/todo";
 import Todo from "../models/todo";
-
+import { Twilio } from "twilio";
+import "dotenv/config";
 
 const getTodos = async (req: Request, res: Response): Promise<void> => {
   try {
@@ -26,7 +27,30 @@ const addTodo = async (req: Request, res: Response): Promise<void> => {
     });
     const newTodo: ITodo = await todo.save();
     const allTodos: ITodo[] = await Todo.find();
-
+     
+ 
+    const accountSid = process.env.TWILIO_ACCOUNT_SID;
+    const authToken = process.env.TWILIO_AUTH_TOKEN;
+    const twilioNumber = process.env.TWILIO_PHONE_NUMBER;
+    const myNumber = process.env.MY_NUMBER;
+   // const myNumber = req.body.mobile;
+    
+    if (accountSid && authToken && myNumber && twilioNumber) {
+      const client = new Twilio(accountSid, authToken);
+    
+      client.messages
+        .create({
+          from: twilioNumber,
+          to: myNumber,
+          body: "You just sent an SMS from TypeScript using Twilio!",
+        })
+        .then((message) => console.log(message.sid));
+    } else {
+      console.error(
+        "You are missing one of the variables you need to send a message"
+      );
+    }
+    
     res
       .status(201)
       .json({ message: "Todo added", todo: newTodo, todos: allTodos });
@@ -34,6 +58,7 @@ const addTodo = async (req: Request, res: Response): Promise<void> => {
     throw error;
   }
 };
+
 
 const updateTodo = async (req: Request, res: Response): Promise<void> => {
   try {
