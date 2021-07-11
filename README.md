@@ -28,10 +28,10 @@ All these tasks assigned data entered by admin, will be stored in a backend data
 npm install
 
 #cd frontend
-#npm install
+npm install
 
 #cd backend
-#npm install
+npm install
 
 #In the root directory
 npm start
