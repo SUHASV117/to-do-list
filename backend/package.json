@@ -13,11 +13,13 @@
   "dependencies": {
     "@types/body-parser": "^1.19.0",
     "@types/dotenv": "^8.2.0",
+    "@types/nodemailer": "^6.4.4",
     "@types/twilio": "^3.19.3",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.9.25"
+    "mongoose": "^5.9.25",
+    "nodemailer": "^6.6.3"
   },
   "devDependencies": {
     "@types/cors": "^2.8.10",

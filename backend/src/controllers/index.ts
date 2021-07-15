@@ -32,7 +32,6 @@ const addTodo = async (req: Request, res: Response): Promise<void> => {
     const accountSid = process.env.TWILIO_ACCOUNT_SID;
     const authToken = process.env.TWILIO_AUTH_TOKEN;
     const twilioNumber = process.env.TWILIO_PHONE_NUMBER;
-   // const myNumber = process.env.MY_NUMBER;
     const myNumber = req.body.mobile;
     
     if (accountSid && authToken && myNumber && twilioNumber) {
@@ -42,7 +41,7 @@ const addTodo = async (req: Request, res: Response): Promise<void> => {
         .create({
           from: twilioNumber,
           to: myNumber,
-          body: "You have been alloted the task"
+          body: `You have been alloted the task ${req.body.task}`
         })
         .then((message) => console.log(message.sid));
     } else {
@@ -50,7 +49,30 @@ const addTodo = async (req: Request, res: Response): Promise<void> => {
         "You are missing one of the variables you need to send a message"
       );
     }
+   
     
+    var nodemailer = require('nodemailer');
+    var transporter = nodemailer.createTransport({
+     service: 'gmail',
+     auth: {
+            user: 'vsuhasv@gmail.com',
+            pass: 'v2473516799s2'
+        }
+    });
+    const mailOptions = {
+      from: 'vsuhasv@gmail.com', // sender address
+      to: req.body.email, // list of receivers
+      subject: 'Task information', // Subject line
+      html: `The task allocated to you is ${req.body.task}`
+    };
+    transporter.sendMail(mailOptions, function (err:any, info:any) {
+       if(err)
+         console.log(err)
+       else
+         console.log(info);
+    });
+
+
     res
       .status(201)
       .json({ message: "Todo added", todo: newTodo, todos: allTodos });

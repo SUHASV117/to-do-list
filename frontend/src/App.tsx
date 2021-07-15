@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import TodoItem from "./components/TodoItem";
-import AddTodo from "./components/AddTodo";
+  import AddTodo from "./components/AddTodo";
 import { getTodos, addTodo, updateTodo, deleteTodo } from "./API";
 
 const App: React.FC = () => {
