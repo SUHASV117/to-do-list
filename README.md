@@ -35,6 +35,9 @@ npm install
 
 #In the root directory
 npm start
+
+#Mongodb connection string
+"mongodb+srv://<username>:<password>@suhasv.5mybd.mongodb.net/<Database name>?retryWrites=true&w=majority"
 ```
 
 ## Steps to run in docker:
@@ -43,4 +46,9 @@ npm start
 #In the root directory
 docker-compose up
 
+#Mongodb connection string
+"mongodb://mongo:27017"
+
+#The mongod terminal should be open. In the terminal type the following:
+mongod
 ```
