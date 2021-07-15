@@ -37,7 +37,10 @@ npm install
 npm start
 ```
 
-# Steps to run in docker:
+## Steps to run in docker:
+
 ```
 #In the root directory
 docker-compose up
+
+```
