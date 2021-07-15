@@ -30,7 +30,7 @@ const AddTodo: React.FC<Props> = ({ saveTodo }) => {
           <input onChange={handleForm} type='text' id='email' />
         </div>
         <div>
-          <label htmlFor='mobile'>Mobile</label>
+          <label htmlFor='mobile'>Mobile (Eg:+918553789789)</label>
           <input onChange={handleForm} type='text' id='mobile' />
         </div>
       </div>
