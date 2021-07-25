@@ -12,6 +12,6 @@ ENV TWILIO_PHONE_NUMBER = "${TWILIO_PHONE_NUMBER}"
 
 COPY . /usr/src/app
 
-EXPOSE 4000
+EXPOSE 8080
 
 CMD ["npm", "start"]

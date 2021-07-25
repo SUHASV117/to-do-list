@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 
-const baseUrl: string = "http://localhost:4000";
+const baseUrl: string = "https://node-todolist-42jp3p7e5a-em.a.run.app";
 
 export const getTodos = async (): Promise<AxiosResponse<ApiDataType>> => {
   try {
