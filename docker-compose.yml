@@ -16,13 +16,26 @@ services:
     restart: always
     build: ./backend
     ports:
-      - '8080:8080'
+      - '4000:4000'
+    links:
+      - mongo
     environment:
       TWILIO_ACCOUNT_SID: '${TWILIO_ACCOUNT_SID}'
       TWILIO_AUTH_TOKEN: '${TWILIO_AUTH_TOKEN}'
       TWILIO_PHONE_NUMBER: '${TWILIO_PHONE_NUMBER}'
     networks:
       - mern-app
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./data:/data/db
+    networks:
+      - mern-app
+volumes:
+  mongodata:
 networks:
   mern-app:
     driver: bridge
