@@ -13,8 +13,8 @@ const PORT: number = 4000;
 app.use(cors());
 app.use(todoRoutes);
 
- const uri: string = "mongodb://mongo:27017"
-// const uri: string = "mongodb+srv://v2473516799s:v2473516799s@suhasv.5mybd.mongodb.net/Typescript?retryWrites=true&w=majority"
+// const uri: string = "mongodb://mongo:27017"
+ const uri: string = "mongodb+srv://<username>:<password>@suhasv.5mybd.mongodb.net/Typescript?retryWrites=true&w=majority"
 
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 mongoose.set("useFindAndModify", false);

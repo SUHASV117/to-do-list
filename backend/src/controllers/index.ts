@@ -55,12 +55,12 @@ const addTodo = async (req: Request, res: Response): Promise<void> => {
     var transporter = nodemailer.createTransport({
      service: 'gmail',
      auth: {
-            user: 'vsuhasv@gmail.com',
-            pass: 'v2473516799s2'
+            user: 'xyz@gmail.com',
+            pass: 'xxxxxxxxx'
         }
     });
     const mailOptions = {
-      from: 'vsuhasv@gmail.com', // sender address
+      from: 'xyz@gmail.com', // sender address
       to: req.body.email, // list of receivers
       subject: 'Task information', // Subject line
       html: `The task allocated to you is ${req.body.task}`
